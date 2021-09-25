@@ -1,1 +1,45 @@
-<p>user-form works!</p>
+<div class="container">
+    <form (ngSubmit)="addNewUser()" #formDir="ngForm" [formGroup]="addUserForm">
+        <div class="box">
+            <div class="crages-validation"
+                [class.crages-validation-error]="addUserForm.errors?.identityRevealed && (addUserForm.touched || addUserForm.dirty)">
+                <div class="form-group">
+                    <label for="userName">User Name</label>
+                    <input id="userName" class="form-control" placeholder="Enter user name"
+                        formControlName="userName" required #userName>
+                    <div *ngIf="userName.invalid && (userName.dirty || userName.touched)"
+                        class="alert alert-danger">
+                        <div *ngIf="userName.errors.required">
+                            User name is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" min="0" max="130" placeholder="Enter age" #age formControlName="age" class="form-control" id="age"
+                        required>
+                    <div *ngIf="age.invalid && (age.dirty || age.touched)" class="alert alert-danger">
+                        <div *ngIf="age.errors.required">
+                            Age is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" placeholder="Enter Address" #address formControlName="address" class="form-control"
+                        id="address" required>
+                    <div *ngIf="address.invalid && (address.dirty || address.touched)" class="alert alert-danger">
+                        <div *ngIf="address.errors.required">
+                            Address no. is required.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <button class="btn btn-dark btn-lg btn-block" type="submit">Add</button>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>

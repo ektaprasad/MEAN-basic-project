@@ -1,1 +1,20 @@
-<p>user-list works!</p>
+<div class="container">
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+            <th scope="col">Serial No.</th>
+            <th scope="col">User Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Address</th>
+        </tr>
+    </thead>
+        <tbody *ngFor='let i of array let el = index'>
+            <tr>
+                <th scope="row">{{el + 1 }}</th>
+                <td>{{array[el]}}</td>
+                <td>{{array[el]}}</td>
+                <td>{{array[el]}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
