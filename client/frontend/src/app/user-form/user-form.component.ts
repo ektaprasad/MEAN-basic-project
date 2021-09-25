@@ -20,8 +20,8 @@ export class UserFormComponent implements OnInit {
       userName: new FormControl(this.user.userName, [
         Validators.required,
       ]),
-      age: new FormControl(this.user.age, [Validators.required]),
-      address: new FormControl(this.user.address, [Validators.required]),
+      age: new FormControl(this.user.age, [Validators.required,Validators.minLength(0),Validators.maxLength(3)]),
+      address: new FormControl(this.user.address, [Validators.required, Validators.maxLength(30)]),
     });
   }
 

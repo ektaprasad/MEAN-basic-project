@@ -1,6 +1,9 @@
-.dashboard {
+.container {
     width: 500px; margin: 0 auto;
     align-content: center;
     align-self: center;
     margin-top: 10%;
+}
+button {
+    margin: 10px;
 }
