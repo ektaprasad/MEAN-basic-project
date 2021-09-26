@@ -9,7 +9,7 @@
             <th scope="col">Address</th>
         </tr>
     </thead>
-        <tbody *ngFor='let i of array let el = index'>
+        <tbody *ngFor='let i of array| paginate: { itemsPerPage: 10, currentPage: p, totalItems: total} let el = index'>
             <tr>
                 <th scope="row">{{el + 1 }}</th>
                 <td>{{array[el].name}}</td>
@@ -18,4 +18,5 @@
             </tr>
         </tbody>
     </table>
+    <pagination-controls (pageChange)="pageChanged($event)" class="paginator"></pagination-controls>
 </div>

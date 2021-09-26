@@ -11,8 +11,8 @@ export class UserService {
     return this.http.post('http://localhost:3000/user/addUser',user)
   }
 
-  getUserList() {
-    return this.http.get('http://localhost:3000/user/getUser')
+  getUserList(data) {
+    return this.http.get(`http://localhost:3000/user/getUser?page=${data.page}&limit=10`)
   }
   
 }

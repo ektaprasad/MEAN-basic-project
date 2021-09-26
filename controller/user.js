@@ -44,7 +44,7 @@ exports.getUsers = async(req) =>{
         // results.data = results;
         results.pagination = {page: page,limit:limit}
         } else {
-        results = await User.find();
+        results.data = await User.find();
         }
         results.total = await User.count();
         return results;
