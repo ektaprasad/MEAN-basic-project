@@ -1,0 +1,29 @@
+{
+  "name": "mean-basic-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ektaprasad/MEAN-basic-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ektaprasad/MEAN-basic-project/issues"
+  },
+  "homepage": "https://github.com/ektaprasad/MEAN-basic-project#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "lodash": "^4.17.21",
+    "mongodb": "^4.1.2",
+    "mongoose": "^5.13.8",
+    "tv4": "^1.3.0"
+  }
+}

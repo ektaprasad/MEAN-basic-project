@@ -1,0 +1,28 @@
+form {
+    margin: 0 auto;
+    padding-top: 7%;
+    width: 500px;
+  }
+  input[type="text"] {
+    width: 100%;
+    display: inline-block;
+  }
+  
+  label {
+    color: rgb(17, 12, 12);
+    font-size: 15px;
+    margin-top: 10px;
+  }
+  h4 {
+    text-align:center;
+  }
+  .box {
+    padding: 20px;
+  }
+
+  .btn {
+    width: 100%;
+    margin-top: 8px;
+    height: 56px;
+}
+
