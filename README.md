@@ -4,5 +4,7 @@ A Simple web application using the MEAN Stack that provides an input form to cap
 
 To run 
 Backend: node app.js
+
 Frontend : Go to client/frontend and run ng serve
+
 Database: create a database and add it to .env file like this MONGO_URI=mongodb://localhost:27017/userDb
