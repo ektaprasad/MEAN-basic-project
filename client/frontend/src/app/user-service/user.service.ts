@@ -8,11 +8,11 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   performAddUser(user) {
-    return this.http.post('localhost:3000/addUser',user)
+    return this.http.post('http://localhost:3000/user/addUser',user)
   }
 
   getUserList() {
-    return this.http.get('localhost:3000/getUser')
+    return this.http.get('http://localhost:3000/user/getUser')
   }
   
 }

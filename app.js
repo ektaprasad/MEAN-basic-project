@@ -1,16 +1,25 @@
 const express = require("express");
 const app = express();
 const dotenv = require("dotenv");
-dotenv.config({ path: "./config/config.env" });
+dotenv.config({ path: ".env" });
 const cors = require("cors");
 app.use(cors());
 require("./startup/routes")(app);    
-const {MongoClient} = require('mongodb');
+const mongoose = require('mongoose');
 
-const client = new MongoClient(process.env.MONGO_URI);
+ 
+const options = {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+};
+const MONGO_URI = process.env.MONGO_URI;
 
-client.connect().then(() => {
-    console.log('db connected');
+mongoose.connect(MONGO_URI, options).then(() => {
+        console.log('db connected');
 });
+ 
+const port = 3000 || process.env.port;
+app.set('port', port);
+app.listen(port, () => console.log(`app listening on port ${port}!`));
 
 module.exports = app;

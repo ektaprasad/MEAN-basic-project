@@ -1,15 +1,23 @@
 const router = require('express').Router();
 const user = require('../controller/user');
 
+const  validate = require("../utils/validate");
+
 router.post('/addUser',async(req,res,next) => {
     try {
-        // validate(req.body);
-        const result = await user.saveUsers(req);
-        if (result) {
-            return res.status(200).json({ success: true, data: result });
-          } else {
-            return res.status(200).json({ success: false, message: "error" });
-         }
+        let schema = {
+            type: 'object',
+            properties: {
+                "userName": { type: 'string', format: 'nonEmptyOrstringBlank' },
+                "age": { type: 'number', format: 'positiveNumeric' },
+                "address": { type: 'string' }
+            },
+            required: ['userName','age','address'],
+            additionalProperties: false
+        }
+
+        validate(req.body,schema,res);
+        await user.saveUsers(req,res);
     } catch(err) {
        throw err;
        next(err);
@@ -18,8 +26,7 @@ router.post('/addUser',async(req,res,next) => {
 
 router.get('/getUser',async(req,res) => {
     try {
-        // validate(req.body);
-        const result = await user.getUsers();
+        const result = await user.getUsers(req);
         res.status(200).json({
             users:result
         });
@@ -27,3 +34,6 @@ router.get('/getUser',async(req,res) => {
        throw err;
     }
 });
+
+
+module.exports = router;

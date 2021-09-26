@@ -1,4 +1,5 @@
 <div class="container">
+    <div><h4>User List</h4></div>
     <table class="table table-bordered table-hover">
         <thead>
         <tr>
@@ -11,9 +12,9 @@
         <tbody *ngFor='let i of array let el = index'>
             <tr>
                 <th scope="row">{{el + 1 }}</th>
-                <td>{{array[el]}}</td>
-                <td>{{array[el]}}</td>
-                <td>{{array[el]}}</td>
+                <td>{{array[el].name}}</td>
+                <td>{{array[el].age}}</td>
+                <td>{{array[el].address}}</td>
             </tr>
         </tbody>
     </table>

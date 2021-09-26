@@ -1,22 +1,28 @@
 form {
     margin: 0 auto;
     padding-top: 7%;
-    width: 300px;
+    width: 500px;
   }
-  input[type="text"],
-  input[type="password"],
-  input[type="email"] {
+  input[type="text"] {
     width: 100%;
-    margin: 8px 0;
-    padding: 12px 20px;
     display: inline-block;
   }
   
   label {
     color: rgb(17, 12, 12);
     font-size: 15px;
+    margin-top: 10px;
+  }
+  h4 {
+    text-align:center;
+  }
+  .box {
+    padding: 20px;
   }
 
+  .btn {
+    width: 100%;
+    margin-top: 8px;
+    height: 56px;
+}
 
-
-  

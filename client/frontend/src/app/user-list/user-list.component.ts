@@ -8,16 +8,15 @@ import { UserService } from '../user-service/user.service';
 })
 export class UserListComponent implements OnInit {
   array: any;
-  
 
   constructor(private userService: UserService) {
-    this.array = [1,2,3,4,5,6,7,8,9];
+    // this.array = [1,2,3,4,5,6,7,8,9];
    }
 
   ngOnInit(): void {
     this.userService.getUserList().subscribe(res => {
       console.log(res);
-      this.array = res;
+      this.array = res['users'];
     },
     (error) => {
       console.log(error);
